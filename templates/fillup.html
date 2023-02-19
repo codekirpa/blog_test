@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee management system</title>
+    <link rel="stylesheet" href='{% static 'style.css' %}'>
+</head>
+<body>
+    <h1>welcome to fillup page</h1>
+    <p> only for test test</p>
+    <h2> please enter your detail </h2>
+    <a href="blogspage"><button>if already fillup</button></a>
+    <form action="fillup" method="POST">
+        {% csrf_token %}    
+            <div>
+                <lable for=" ">enter first name</label><br>
+                <input type='text'name='first_name' id=" " required>
+            </div>
+            <div>
+                <lable for=" ">enter last name</label><br>
+                <input type='text'name='last_name' id=" " required>
+            </div>
+            <div>
+                <lable for=" ">enter location</label><br>
+                <input type='text' name='location' id=" " required >
+            </div>
+            <div>
+                <lable for=" ">enter email</label><br>
+                <input type='email' name='email_id' id=" " required >
+            </div>
+            <div>
+                <lable for=" ">enter hobby</label><br>
+                <input type='text'name='hobby' id=" " required>
+            </div>
+            <div>
+                <lable for=" ">enter phone number</label><br>
+                <input type='number'name='phone_num' id=" " required>
+            </div>
+            
+            <input type="submit" value="submit">
+    
+        </form>
+    
+</body>
+</html>

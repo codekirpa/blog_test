@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>welcome to blogspage</title>
+    <link rel="stylesheet" href='{% static 'style.css' %}'>
+</head>
+<body>
+    <h1> you are in blogs page</h>
+        {% for bb in blog %}
+        <div>
+           title is= {{bb.title}}
+        </div>
+        <div>
+           description= {{bb.description}}
+        </div>
+        
+        <div>
+        <img src="{{ bb.image.url }}" alt="image desc" height='200'>
+        </div>
+        <div>
+            {{bb.author}}
+        </div>
+        <div>
+            category is ={{bb.category.name}}
+        </div>
+        {% endfor %}
+    <div>
+        <h2>available category is</h2>
+        {% for cc in cat %}
+        <div>
+        <a href="specific/{{cc.id}}">{{cc.name}}</a>
+        </div>
+        {% endfor %}
+    </div>
+    
+    
+   
+</body>
+</html>

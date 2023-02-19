@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee management system</title>
+    <link rel="stylesheet" href='{% static 'style.css' %}'>
+</head>
+<body>
+    <h1>you are on register page</h1>
+    <div>
+     <a href="login"><button>loginpage</button></a>
+    </div>
+
+    <div>
+        {% for mess in messages%}
+        {{ mess }}
+        {% endfor %}
+    </div>
+    <form action='register' method='POST'>
+    {% csrf_token %}    
+        <div>
+            <label for="">Username </label>
+            <input type="text"  id="" name="username"
+                required>
+        </div><!-- End .form-group -->
+
+        <div>
+            <label for="">Password </label>
+            <input type="password"  id=" "
+                name="password" required>
+        </div>
+        
+        <input type='submit'value="submit">
+
+    </form>
+
+</body>
+
+</html>

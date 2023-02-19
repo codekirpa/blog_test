@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>welcome to specific blogspage</title>
+    <link rel="stylesheet" href='{% static 'style.css' %}'>
+</head>
+<body>
+        <a href="/blogspage"><button>back</button></a>
+        <a href="/blogspage"><button>blogs</button></a>
+        {% for bb in blog1 %}
+        <div>
+           title is= {{bb.title}}
+        </div>
+        <div>
+           description= {{bb.description}}
+        </div>
+        
+        <div>
+        <img src="{{ bb.image.url }}" alt="image desc" height='200'>
+        </div>
+        <div>
+            {{bb.author}}
+        </div>
+        <div>
+            category is ={{bb.category.name}}
+        </div>
+        {% endfor %}
+    <div>
+        <h2>available category is</h2>
+        {% for cc2 in cat2 %}
+        <div>
+        <a href="/specific/{{cc2.id}}">{{cc2.name}}</a>
+        </div>
+        {% endfor %}
+    </div>
+    
+    
+   
+</body>
+</html>
